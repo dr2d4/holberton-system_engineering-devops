@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -regex ".*/[A-Z]+.*" -exec cp {} /tmp/u \;
+cp [[:upper:]]* /tmp/u
