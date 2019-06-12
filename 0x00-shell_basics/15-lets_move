@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -name "[A-Z]*" -exec cp {} /tmp/u \;
+find . -regex ".*/[A-Z0-9]+\.[a-z]+" -exec cp {} /tmp/u \;
