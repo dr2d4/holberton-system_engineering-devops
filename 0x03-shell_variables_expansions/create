@@ -10,8 +10,8 @@ export action="Add"
 # vamos a actualizar
 [[ -f "$1" ]] && export action="Update"
 
-# Copio el archivo 0 con un nuevo nombre
-[[ ! -f "$1" ]] && cp 0-* $1
+# Creo el archivo como un script bash de linux
+[[ ! -f "$1" ]] && echo '#!/bin/bash' > $1
 
 # Abro el nuevo archivo con nano
 nano $1
