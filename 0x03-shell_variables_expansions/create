@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Accion a relaizar si no existe el archivo
+export action="Add"
+
+# En caso de que el archivo ya exista indicamos que
+# vamos a actualizar
+[[ -f "$1" ]] && export action="Update"
+
+# Copio el archivo 0 con un nuevo nombre
+[[ ! -f "$1" ]] && cp 0-* $1
+
+# Abro el nuevo archivo con nano
+nano $1
+
+# Agrego el archivo a git
+git add $1
+
+# Hago un commit con el nombre del script
+git commit -m "$action $1 script"
+git push
