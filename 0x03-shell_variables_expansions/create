@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Guarda las credenciales de git de forma indefinida
+git config credential.helper store
+
 # Accion a relaizar si no existe el archivo
 export action="Add"
 
