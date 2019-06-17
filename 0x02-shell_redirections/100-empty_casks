@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -printf "%f\n" | rev | cut -c4 --complement | rev | sort -f
+find . -empty -printf "%f\n"
