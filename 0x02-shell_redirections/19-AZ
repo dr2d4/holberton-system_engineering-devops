@@ -1,2 +1,2 @@
 #!/bin/bash
-sed 's/A/Z/; s/c/e/'
+tr '[A c] [Z e]'
