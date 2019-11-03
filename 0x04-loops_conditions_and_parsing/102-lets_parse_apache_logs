@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# This script is displaying apache-access.log ip:status
 awk '{ print $1 " " $9 }' apache-access.log

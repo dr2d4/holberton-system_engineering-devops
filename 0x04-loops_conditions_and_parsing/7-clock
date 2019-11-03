@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script is displaying Hours and Minutes
 x=0
 while [ $x -le 12 ]
 do

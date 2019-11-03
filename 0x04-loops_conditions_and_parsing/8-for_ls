@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script is displaying print all files in current directory
 FILES=$(ls .)
 for file in $FILES
 do

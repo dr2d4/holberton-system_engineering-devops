@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script is displaying /etc/passwd content
 while IFS= read -r line
 do
     echo "$line" | cut -f1,3,6 -d:
