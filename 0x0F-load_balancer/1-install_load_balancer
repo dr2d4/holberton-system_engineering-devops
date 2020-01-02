@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Installing and configuring HAProxy
+sudo apt -y update
+
+sudo apt -y install software-properties-common
+sudo apt-add-repository -y ppa:vbernat/haproxy-1.8
+
+sudo apt -y update
+sudo apt -y install haproxy=1.8\*
+
+sudo sed -i "s/ENABLED=0/ENABLED=1/g" /etc/default/haproxy
+
+echo "listen 922-lb-01" >> /etc/haproxy/haproxy.cfg
+echo "	bind 0:80" >> /etc/haproxy/haproxy.cfg
+echo "	mode http" >> /etc/haproxy/haproxy.cfg
+echo "	stats enable" >> /etc/haproxy/haproxy.cfg
+echo "	balance roundrobin" >> /etc/haproxy/haproxy.cfg
+echo "	option httpclose" >> /etc/haproxy/haproxy.cfg
+echo "	option forwardfor" >> /etc/haproxy/haproxy.cfg
+echo "	server 922-web-01 34.227.229.159 check port 80" >> /etc/haproxy/haproxy.cfg
+echo "	server 922-web-02 34.229.125.244 check port 80" >> /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
