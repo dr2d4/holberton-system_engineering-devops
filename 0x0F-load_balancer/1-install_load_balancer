@@ -17,7 +17,7 @@ sudo echo "	stats enable" >> /etc/haproxy/haproxy.cfg
 sudo echo "	balance roundrobin" >> /etc/haproxy/haproxy.cfg
 sudo echo "	option httpclose" >> /etc/haproxy/haproxy.cfg
 sudo echo "	option forwardfor" >> /etc/haproxy/haproxy.cfg
-sudo echo "	server 922-web-01 34.227.229.159 check port 80" >> /etc/haproxy/haproxy.cfg
-sudo echo "	server 922-web-02 34.229.125.244 check port 80" >> /etc/haproxy/haproxy.cfg
+sudo echo "	server 922-web-01 35.243.249.129 check port 80" >> /etc/haproxy/haproxy.cfg
+sudo echo "	server 922-web-02 35.237.192.177 check port 80" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
