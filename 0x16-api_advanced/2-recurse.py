@@ -9,7 +9,7 @@ def recurse(subreddit, hot_list=[], after=None):
     """
         Get data recursive
     """
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
+    url = 'https://api.reddit.com/r/{}/hot'.format(subreddit)
 
     params = {
         'after': after,
@@ -22,6 +22,9 @@ def recurse(subreddit, hot_list=[], after=None):
 
     request = requests.get(url, params, headers=hs, allow_redirects=False)
     top_posts = request.json()
+
+    if request.status_code == 404:
+        return None
 
     data = top_posts.get('data')
 
